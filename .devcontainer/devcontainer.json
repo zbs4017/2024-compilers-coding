@@ -1,0 +1,32 @@
+{
+    "name": "Java Development Environment",
+    
+    // 使用标准的 Java 开发镜像
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+
+    // 配置工具和运行时
+    "features": {
+        // 安装 Java 开发工具
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "17",
+            "installMaven": "true",
+            "installGradle": "true"
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+
+    // 容器的环境变量
+    "remoteEnv": {
+        "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current"
+    },
+
+    // IDEA 特定设置
+    "customizations": {
+        "intellij": {
+            "projectJDK": "17",
+            "sdkSettings": {
+                "jdkHome": "/usr/lib/jvm/msopenjdk-current"
+            }
+        }
+    }
+}
